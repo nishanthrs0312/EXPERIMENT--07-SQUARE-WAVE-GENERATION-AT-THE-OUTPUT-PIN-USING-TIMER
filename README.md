@@ -114,8 +114,9 @@ int main(void)
 
   SystemClock_Config();
 
-  MX_GPIO_Init();
-  MX_TIM2_Init();
+  HAL_TIM_Base_Start(&htim2);
+  HAL_TIM_PWM_Init(&htim2);
+  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
   
   while (1)
   {
